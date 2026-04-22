@@ -1,0 +1,264 @@
+:root {
+  --tech-primary: #1E40AF;
+  --tech-primary-hover: #1D4ED8;
+  --tech-primary-dark: #1E3A8A;
+
+  --tech-accent: #F59E0B;
+  --tech-accent-hover: #D97706;
+
+  --tech-bg: #F8FAFC;
+  --tech-surface: #FFFFFF;
+  --tech-section-bg: #EEF4F8;
+
+  --tech-text-primary: #1F2937;
+  --tech-text-secondary: #64748B;
+  --tech-border: #D9E2EC;
+
+  --tech-success: #16A34A;
+  --tech-danger: #DC2626;
+
+  --tech-shadow-sm: 0 10px 24px rgba(30, 64, 175, 0.06);
+  --tech-shadow-md: 0 18px 40px rgba(15, 23, 42, 0.14);
+  --tech-shadow-lg: 0 24px 52px rgba(15, 23, 42, 0.18);
+
+  --tech-radius-xl: 26px;
+  --tech-radius-lg: 18px;
+  --tech-radius-md: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.technician-sidebar {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.16), transparent 22%),
+    linear-gradient(180deg, #1E3A8A 0%, #1E40AF 55%, #173792 100%);
+  color: #ffffff;
+  transition: width 0.28s ease, box-shadow 0.28s ease;
+  box-shadow: 10px 0 28px rgba(15, 23, 42, 0.16);
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 100;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.technician-sidebar.open {
+  width: 268px;
+}
+
+.technician-sidebar.closed {
+  width: 88px;
+}
+
+.technician-sidebar-top {
+  padding: 20px 16px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  position: relative;
+}
+
+.technician-sidebar-top::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.technician-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 54px;
+}
+
+.technician-sidebar-logo {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.16),
+    rgba(255, 255, 255, 0.08)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.technician-sidebar-logo-img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.technician-sidebar-brand-text h2 {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+.technician-sidebar-brand-text p {
+  margin: 4px 0 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.4;
+}
+
+.technician-sidebar-menu {
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.technician-sidebar-item {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.96rem;
+  font-weight: 600;
+  text-align: left;
+  width: 100%;
+  position: relative;
+}
+
+.technician-sidebar-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 999px;
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
+.technician-sidebar.closed .technician-sidebar-item {
+  justify-content: center;
+  padding: 14px 10px;
+}
+
+.technician-sidebar.closed .technician-sidebar-top {
+  padding: 20px 12px 18px;
+}
+
+.technician-sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.10);
+  transform: translateX(2px);
+}
+
+.technician-sidebar-item:hover::before {
+  background: rgba(255, 255, 255, 0.20);
+}
+
+.technician-sidebar.closed .technician-sidebar-item:hover {
+  transform: none;
+}
+
+.technician-sidebar-item.active {
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.98),
+    rgba(217, 119, 6, 0.98)
+  );
+  color: #1F2937;
+  font-weight: 800;
+  box-shadow: 0 12px 24px rgba(245, 158, 11, 0.28);
+}
+
+.technician-sidebar-item.active::before {
+  background: rgba(31, 41, 55, 0.75);
+}
+
+.technician-sidebar-item.active .technician-sidebar-icon,
+.technician-sidebar-item.active .technician-sidebar-label {
+  color: #1F2937;
+}
+
+.technician-sidebar-icon {
+  min-width: 22px;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.technician-sidebar-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.technician-sidebar-bottom {
+  padding: 16px 12px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  position: relative;
+}
+
+.technician-sidebar-bottom::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: -1px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.technician-logout-btn {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.technician-logout-btn:hover {
+  background: rgba(220, 38, 38, 0.22);
+  color: #ffffff;
+}
+
+.technician-logout-btn:hover::before {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+@media (max-width: 900px) {
+  .technician-sidebar.open {
+    width: 224px;
+  }
+
+  .technician-sidebar.closed {
+    width: 74px;
+  }
+}

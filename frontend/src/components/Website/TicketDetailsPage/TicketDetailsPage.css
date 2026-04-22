@@ -1,0 +1,235 @@
+:root {
+  --primary: #1e3a8a;
+  --secondary: #0f766e;
+  --accent: #f59e0b;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --border: #e5e7eb;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+}
+
+.ticket-details-page {
+  min-height: 100vh;
+  background: var(--background);
+  padding: 32px 16px 48px;
+}
+
+.ticket-details-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ticket-summary-card,
+.ticket-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 10px 28px rgba(31, 41, 55, 0.06);
+}
+
+.ticket-summary-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.ticket-summary-card h1 {
+  margin: 0 0 6px;
+  color: var(--primary);
+}
+
+.ticket-summary-card p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.ticket-pill {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ticket-pill.open {
+  background: rgba(30, 58, 138, 0.12);
+  color: var(--primary);
+}
+
+.ticket-pill.in_progress {
+  background: rgba(217, 119, 6, 0.12);
+  color: var(--warning);
+}
+
+.ticket-pill.resolved {
+  background: rgba(22, 163, 74, 0.12);
+  color: var(--success);
+}
+
+.ticket-pill.rejected {
+  background: rgba(220, 38, 38, 0.12);
+  color: var(--danger);
+}
+
+.ticket-details-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.ticket-card {
+  margin-bottom: 18px;
+}
+
+.ticket-card h2 {
+  margin: 0 0 16px;
+  color: var(--text-primary);
+}
+
+.ticket-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.ticket-description-box {
+  margin-top: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+}
+
+.ticket-attachment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ticket-attachment-item {
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.ticket-attachment-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.ticket-history-list,
+.ticket-comment-list {
+  display: grid;
+  gap: 14px;
+}
+
+.ticket-history-item,
+.ticket-comment-item {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  background: #fbfdff;
+}
+
+.ticket-history-item h4,
+.ticket-comment-head h4 {
+  margin: 0 0 6px;
+  color: var(--text-primary);
+}
+
+.ticket-history-item p,
+.ticket-comment-head p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.ticket-history-item span,
+.ticket-comment-head span {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.ticket-comment-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ticket-comment-body {
+  margin-top: 12px;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+}
+
+.ticket-comment-form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.ticket-comment-form textarea,
+.ticket-comment-item textarea {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.ticket-comment-form button,
+.ticket-comment-actions button {
+  width: fit-content;
+  border: none;
+  background: var(--primary);
+  color: var(--surface);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ticket-comment-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.ticket-comment-actions .secondary {
+  background: var(--secondary);
+}
+
+.ticket-comment-actions .danger {
+  background: var(--danger);
+}
+
+.ticket-empty-line,
+.ticket-details-empty {
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 18px;
+}
+
+@media (max-width: 768px) {
+  .ticket-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-attachment-grid {
+    grid-template-columns: 1fr;
+  }
+}
