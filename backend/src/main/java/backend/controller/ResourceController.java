@@ -63,4 +63,4 @@ public class ResourceController {
         resourceRepository.delete(resource);
         return "Resource deleted successfully";
     }
-}
+}// Member 1 - Facilities & Assets Catalogue
